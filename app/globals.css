@@ -31,3 +31,12 @@ body {
     text-wrap: balance;
   }
 }
+
+/* Ensure light mode is default by overriding dark mode styles */
+@media (prefers-color-scheme: light) {
+  :root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
+  }
+}
