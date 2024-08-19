@@ -1,12 +1,12 @@
-"use client";
-
+"use client"
+import React, { Suspense } from 'react';
 import CheckoutPage from "@/components/screens/CheckoutPage";
-import { useSearchParams } from 'next/navigation'; // Use this instead of useRouter
+import { useSearchParams } from 'next/navigation';
 import Image from "next/image";
 
-export default function Home() {
+const CheckoutPageWithSuspense = () => {
   const searchParams = useSearchParams();
-  
+
   // Extract query parameters
   const products = searchParams.get('products');
   const serviceFee = searchParams.get('serviceFee');
@@ -21,9 +21,17 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between p-4 text-black bg-slate-200">
       <CheckoutPage
         products={parsedProducts}
-        serviceFee={5}
+        serviceFee={parsedServiceFee}
         deliveryFee={parsedDeliveryFee}
       />
     </main>
+  );
+};
+
+export default function Home() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <CheckoutPageWithSuspense />
+    </Suspense>
   );
 }

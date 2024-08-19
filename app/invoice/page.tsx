@@ -72,6 +72,7 @@ const InvoiceContent = React.forwardRef(({ transactions, totalAmount, netAmount 
     </main>
   </div>
 ));
+InvoiceContent.displayName = 'InvoiceContent';
 
 function InvoicePage() {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
