@@ -40,7 +40,6 @@ describe("Products Page", () => {
     const product: Product = {
       name: "Test Product",
       description: "Test Description",
-      image: "http://example.com/image.jpg",
       quantity: 1,
       price: 9.99,
     };
@@ -52,9 +51,7 @@ describe("Products Page", () => {
     fireEvent.change(screen.getByLabelText(/Product Description/i), {
       target: { value: product.description },
     });
-    fireEvent.change(screen.getByLabelText(/Product Image/i), {
-      target: { value: product.image },
-    });
+    
     fireEvent.change(screen.getByLabelText(/Product Quantity/i), {
       target: { value: product.quantity.toString() },
     });
@@ -80,7 +77,6 @@ describe("Products Page", () => {
     const product: Product = {
       name: "Test Product",
       description: "Test Description",
-      image: "http://example.com/image.jpg",
       quantity: 1,
       price: 9.99,
     };
@@ -92,9 +88,7 @@ describe("Products Page", () => {
     fireEvent.change(screen.getByLabelText(/Product Description/i), {
       target: { value: product.description },
     });
-    fireEvent.change(screen.getByLabelText(/Product Image/i), {
-      target: { value: product.image },
-    });
+   
     fireEvent.change(screen.getByLabelText(/Product Quantity/i), {
       target: { value: product.quantity.toString() },
     });
@@ -119,7 +113,6 @@ describe("Products Page", () => {
     const product: Product = {
       name: "Test Product",
       description: "Test Description",
-      image: "http://example.com/image.jpg",
       quantity: 1,
       price: 9.99,
     };
@@ -131,9 +124,7 @@ describe("Products Page", () => {
     fireEvent.change(screen.getByLabelText(/Product Description/i), {
       target: { value: product.description },
     });
-    fireEvent.change(screen.getByLabelText(/Product Image/i), {
-      target: { value: product.image },
-    });
+
     fireEvent.change(screen.getByLabelText(/Product Quantity/i), {
       target: { value: product.quantity.toString() },
     });
@@ -159,16 +150,15 @@ describe("Products Page", () => {
 
     // Add multiple products to the cart
     const products: Product[] = [
-      { name: "Product 1", description: "Description 1", image: "http://example.com/image1.jpg", quantity: 2, price: 10.00 },
-      { name: "Product 2", description: "Description 2", image: "http://example.com/image2.jpg", quantity: 1, price: 20.00 }
+      { name: "Product 1", description: "Description 1", quantity: 2, price: 10.00 },
+      { name: "Product 2", description: "Description 2",  quantity: 1, price: 20.00 }
     ];
 
     // Add products to the cart
     products.forEach(product => {
       fireEvent.change(screen.getByLabelText(/Product Name/i), { target: { value: product.name } });
       fireEvent.change(screen.getByLabelText(/Product Description/i), { target: { value: product.description } });
-      fireEvent.change(screen.getByLabelText(/Product Image/i), { target: { value: product.image } });
-      fireEvent.change(screen.getByLabelText(/Product Quantity/i), { target: { value: product.quantity.toString() } });
+     fireEvent.change(screen.getByLabelText(/Product Quantity/i), { target: { value: product.quantity.toString() } });
       fireEvent.change(screen.getByLabelText(/Product Price/i), { target: { value: product.price.toString() } });
       fireEvent.click(screen.getByRole("button", { name: /Add Item to Cart/i }));
     });
@@ -184,7 +174,6 @@ describe("Products Page", () => {
     // Clear all fields (assuming form has validation)
     fireEvent.change(screen.getByLabelText(/Product Name/i), { target: { value: "" } });
     fireEvent.change(screen.getByLabelText(/Product Description/i), { target: { value: "" } });
-    fireEvent.change(screen.getByLabelText(/Product Image/i), { target: { value: "" } });
     fireEvent.change(screen.getByLabelText(/Product Quantity/i), { target: { value: "" } });
     fireEvent.change(screen.getByLabelText(/Product Price/i), { target: { value: "" } });
 

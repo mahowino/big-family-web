@@ -10,7 +10,6 @@ interface ProductFormProps {
 const ProductForm: React.FC<ProductFormProps> = ({ onAddToCart }) => {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
-  const [image, setImage] = useState('');
   const [quantity, setQuantity] = useState<number>(0);
   const [price, setPrice] = useState<number>(0);
 
@@ -21,7 +20,6 @@ const ProductForm: React.FC<ProductFormProps> = ({ onAddToCart }) => {
 
     if (!name) newErrors.push('Product Name is required.');
     if (!description) newErrors.push('Product Description is required.');
-    if (!image) newErrors.push('Product Image URL is required.');
     if (quantity <= 0) newErrors.push('Product Quantity must be greater than zero.');
     if (price <= 0) newErrors.push('Product Price must be greater than zero.');
 
@@ -33,10 +31,9 @@ const ProductForm: React.FC<ProductFormProps> = ({ onAddToCart }) => {
     e.preventDefault();
 
     if (validateForm()) {
-      onAddToCart({ name, description, image, quantity: Number(quantity), price: Number(price) });
+      onAddToCart({ name, description,  quantity: Number(quantity), price: Number(price) });
       setName('');
       setDescription('');
-      setImage('');
       setQuantity(0);
       setPrice(0);
       setErrors([]);
@@ -73,18 +70,7 @@ const ProductForm: React.FC<ProductFormProps> = ({ onAddToCart }) => {
           />
         </div>
 
-        <div>
-          <label htmlFor="image" className="block text-sm font-medium text-gray-700 mb-1">Product Image URL</label>
-          <input
-            id="image"
-            name="image"
-            type="text"
-            value={image}
-            onChange={(e) => setImage(e.target.value)}
-            placeholder="Enter image URL"
-            className="block w-full border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm px-4 py-2"
-          />
-        </div>
+        
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>

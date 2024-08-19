@@ -4,7 +4,7 @@ import { withAuth } from "@/hoc/withAuth"; // Import your withAuth HOC
 
 function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 text-black bg-slate-200">
+    <main className="flex min-h-screen flex-col items-center justify-between  text-black bg-slate-200">
       <ProductForm />
     </main>
   );

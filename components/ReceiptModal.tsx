@@ -19,7 +19,7 @@ const ReceiptModal: React.FC<ModalProps> = ({ isOpen, onClose, onSubmit }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
-      <div className="bg-white p-6 rounded-lg shadow-lg w-1/3">
+      <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md mx-4 sm:mx-6">
         <h2 className="text-lg font-semibold mb-4">Validate Payment</h2>
         <input
           type="text"
@@ -28,10 +28,10 @@ const ReceiptModal: React.FC<ModalProps> = ({ isOpen, onClose, onSubmit }) => {
           placeholder="Enter receipt number"
           className="w-full p-2 border border-gray-300 rounded mb-4"
         />
-        <div className="flex justify-end gap-4">
+        <div className="flex flex-col sm:flex-row justify-end gap-4">
           <button
             onClick={handleSubmit}
-            className="bg-blue-500 text-white px-4 py-2 rounded"
+            className="bg-blue-500 text-white px-4 py-2 rounded mb-2 sm:mb-0"
           >
             Submit
           </button>

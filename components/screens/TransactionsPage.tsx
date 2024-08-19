@@ -202,7 +202,6 @@ export function TransactionsTable({ transactions }: TransactionsTableProps) {
               </td>
               <td className="px-6 py-4">
                 <div className="flex justify-end gap-4">
-                  <button className="text-blue-600 hover:underline">View</button>
                   {transaction.status === "Completed" && !transaction.validated && (
                     <button
                       className="text-green-600 hover:underline"

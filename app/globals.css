@@ -2,20 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Define CSS variables */
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  /* Light color variables */
+  --foreground-rgb-light: 220, 230, 245; /* Lighter shade */
+  --background-start-rgb-light: 220, 230, 245; /* Lighter shade */
+  --background-end-rgb-light: 220, 230, 245; /* Lighter shade */
+
+  /* Darker color variables */
+  --foreground-rgb-dark: 220, 230, 245; /* Original dark shade */
+  --background-start-rgb-dark: 220, 230, 245; /* Original dark shade */
+  --background-end-rgb-dark: 220, 230, 245; /* Original dark shade */
+}
+
+
+/* Apply the styles based on the color scheme */
+@media (prefers-color-scheme: light) {
+  :root {
+    --foreground-rgb: var(--foreground-rgb-light);
+    --background-start-rgb: var(--background-start-rgb-light);
+    --background-end-rgb: var(--background-end-rgb-light);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: var(--foreground-rgb-dark);
+    --background-start-rgb: var(--background-start-rgb-dark);
+    --background-end-rgb: var(--background-end-rgb-dark);
   }
 }
 
+/* Apply the background and text color to the body */
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -26,17 +44,9 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+/* Custom utility classes */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
-  }
-}
-
-/* Ensure light mode is default by overriding dark mode styles */
-@media (prefers-color-scheme: light) {
-  :root {
-    --foreground-rgb: 0, 0, 0;
-    --background-start-rgb: 214, 219, 220;
-    --background-end-rgb: 255, 255, 255;
   }
 }

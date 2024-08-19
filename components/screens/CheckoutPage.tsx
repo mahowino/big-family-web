@@ -122,7 +122,7 @@ const CheckoutPage: React.FC<CheckoutPageProps> = ({ products, serviceFee, deliv
           const transactionData = {
             products: productList,
             receiptNumber: data.receiptNumber,
-            amount: calculateTotalPrice().toFixed(2),
+            amount: (calculateTotalPrice()-serviceFee).toFixed(2),
             serviceFee: serviceFee,
             deliveryFee: currentDeliveryFee,
             status: 'Completed',
@@ -246,12 +246,7 @@ const CheckoutPage: React.FC<CheckoutPageProps> = ({ products, serviceFee, deliv
             >
               I have completed the payment
             </button>
-            <button
-              className="mt-2 px-4 py-2 bg-gray-200 rounded-md"
-              onClick={() => setPaymentLink(null)}
-            >
-              Close
-            </button>
+           
           </div>
         </div>
       )}

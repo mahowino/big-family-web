@@ -26,8 +26,7 @@ const PaymentSuccess: React.FC = () => {
         },
         body: JSON.stringify({ reference }),
       });
-      const data=await response.json();
-      const receiptFromPaystack=data.receiptNumber;
+
 
       if (response.ok) {
         setPaymentVerified(true);

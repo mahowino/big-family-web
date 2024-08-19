@@ -18,7 +18,7 @@ export default function Home() {
   const parsedDeliveryFee = deliveryFee ? parseFloat(deliveryFee) : 0;
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 text-black bg-slate-200">
+    <main className="flex min-h-screen flex-col items-center justify-between p-4 text-black bg-slate-200">
       <CheckoutPage
         products={parsedProducts}
         serviceFee={5}

@@ -30,7 +30,7 @@ const InvoiceContent = React.forwardRef(({ transactions, totalAmount, netAmount 
         <p className="text-gray-500">No validated transactions found.</p>
       ) : (
         <div>
-          <table className="w-full border-collapse bg-white text-left text-sm text-gray-500">
+          <table className="w-full border-collapse overflow-x-auto bg-white text-left text-sm text-gray-500">
             <thead className="bg-gray-100">
               <tr>
                 <th className="px-4 py-2 font-medium text-gray-900">Receipt Number</th>
