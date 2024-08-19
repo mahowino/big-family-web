@@ -32,7 +32,7 @@ import { FaBars } from "react-icons/fa";
   useEffect(() => {
     const fetchTransactions = async () => {
       try {
-        const response = await fetch('/api/transactions');
+        const response = await fetch('/api/transactions',{cache:'no-store'});
         if (!response.ok) {
           throw new Error('Failed to fetch transactions');
         }

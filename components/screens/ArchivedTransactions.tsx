@@ -54,7 +54,7 @@ export default function InvoicesPage() {
   useEffect(() => {
     async function fetchInvoices() {
       try {
-        const response = await fetch('/api/invoices');
+        const response = await fetch('/api/invoices',{ cache: 'no-store' });
         if (!response.ok) {
           throw new Error('Failed to fetch invoices');
         }
