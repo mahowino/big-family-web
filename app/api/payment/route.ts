@@ -7,7 +7,7 @@ export async function POST(request: Request) {
 
     // Define your Paystack API key and endpoint
     const PAYSTACK_SECRET_KEY =
-      "sk_test_73a0409ef54b1527abb426918f17c9b5127c847f";
+      "sk_live_76e4619a097597ea2835e6da74b1025da9014892";
     const PAYSTACK_API_URL = "https://api.paystack.co/transaction/initialize";
 
     // Prepare the Paystack request

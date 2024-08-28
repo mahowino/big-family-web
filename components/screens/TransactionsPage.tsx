@@ -53,6 +53,7 @@ export function TransactionsTable({ transactions }: TransactionsTableProps) {
       if (selectedTransaction.referenceCode) {
         const response = await fetch('/api/verify-payment/', {
           method: 'POST',
+          cache:'no-store',
           headers: {
             'Content-Type': 'application/json',
           },
